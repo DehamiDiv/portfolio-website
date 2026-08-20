@@ -7,13 +7,13 @@ export default function Contact() {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
 
   const [status, setStatus] = useState({
     loading: false,
     success: null,
-    message: ""
+    message: "",
   });
 
   const handleChange = (e) => {
@@ -28,10 +28,8 @@ export default function Contact() {
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
       const data = await res.json();
@@ -40,15 +38,14 @@ export default function Contact() {
         setStatus({
           loading: false,
           success: true,
-          message: "Thank you! Your message has been sent successfully."
+          message: "Thank you! Your message has been sent successfully. I will get back to you soon.",
         });
-        // Clear form
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
         setStatus({
           loading: false,
           success: false,
-          message: data.error || "Something went wrong. Please try again."
+          message: data.error || "Something went wrong. Please try again.",
         });
       }
     } catch (err) {
@@ -56,315 +53,351 @@ export default function Contact() {
       setStatus({
         loading: false,
         success: false,
-        message: "Failed to connect to the server. Please check your internet connection and try again."
+        message: "Message could not be sent right now. Please reach out directly via email.",
       });
     }
   };
 
   return (
-    <section id="contact" className="contact-section">
-      <div className="ambient-glow glow-2" style={{ top: "60%", right: "80%" }}></div>
-
-      <div className="container">
-        <div className="section-title-wrapper">
-          <h2 className="section-title">
-            Get In <span className="gradient-text">Touch</span>
+    <section id="contact" className="section-wrapper">
+      <div className="wrap">
+        <div className="contact-head">
+          <span className="label label-rose">START A CONVERSATION</span>
+          <h2 className="section-h2">
+            Let&apos;s Build Something <span className="grad-cyan-rose">Remarkable</span>
           </h2>
-          <p className="section-subtitle">
-            Have an internship role, a project idea, or just want to say hi? Feel free to reach out.
+          <p className="section-p">
+            Whether you have an internship opportunity, a software project, or want to connect — feel free to reach out.
           </p>
         </div>
 
         <div className="contact-grid">
-          {/* Left Side: Contact Info */}
-          <div className="contact-info-panel glass-card">
-            <h3 className="panel-title">Let&apos;s Connect</h3>
-            <p className="panel-text">
-              I am actively looking for software engineering internship opportunities. I am also open to freelance work and interesting hobby collaborations.
-            </p>
+          {/* Left Column: Direct Methods */}
+          <div className="contact-info-col rv">
+            <div className="info-card">
+              <h3 className="info-title">Contact Channels</h3>
+              <p className="info-desc">
+                I am actively seeking software engineering internships, collaborative development projects, and exciting tech initiatives.
+              </p>
 
-            <div className="contact-methods">
-              <a href="mailto:dehamidivyanjali166@gmail.com" className="method-item">
-                <div className="method-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                </div>
-                <div className="method-details">
-                  <span className="method-label">Email Me</span>
-                  <span className="method-value">dehamidivyanjali166@gmail.com</span>
-                </div>
-              </a>
+              <div className="channels-list">
+                <a href="mailto:dehamidivyanjali166@gmail.com" className="channel-item">
+                  <div className="channel-icon icon-email">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  </div>
+                  <div className="channel-details">
+                    <span className="channel-label">Email Address</span>
+                    <span className="channel-val">dehamidivyanjali166@gmail.com</span>
+                  </div>
+                </a>
 
-              <a href="https://www.linkedin.com/in/dehami-divyanjalee-a14883276" target="_blank" rel="noopener noreferrer" className="method-item">
-                <div className="method-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                </div>
-                <div className="method-details">
-                  <span className="method-label">LinkedIn</span>
-                  <span className="method-value">linkedin.com/in/dehami-divyanjalee-a14883276</span>
-                </div>
-              </a>
+                <a
+                  href="https://www.linkedin.com/in/dehami-divyanjalee-a14883276"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="channel-item"
+                >
+                  <div className="channel-icon icon-linkedin">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                  </div>
+                  <div className="channel-details">
+                    <span className="channel-label">LinkedIn Profile</span>
+                    <span className="channel-val">linkedin.com/in/dehami-divyanjalee</span>
+                  </div>
+                </a>
 
-              <a href="https://github.com/DehamiDiv" target="_blank" rel="noopener noreferrer" className="method-item">
-                <div className="method-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                </div>
-                <div className="method-details">
-                  <span className="method-label">GitHub</span>
-                  <span className="method-value">github.com/DehamiDiv</span>
-                </div>
-              </a>
+                <a
+                  href="https://github.com/DehamiDiv"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="channel-item"
+                >
+                  <div className="channel-icon icon-github">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  </div>
+                  <div className="channel-details">
+                    <span className="channel-label">GitHub Repositories</span>
+                    <span className="channel-val">github.com/DehamiDiv</span>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
 
-          {/* Right Side: Form */}
-          <div className="contact-form-panel glass-card">
-            <form onSubmit={handleSubmit} className="contact-form">
-              <div className="form-group">
-                <label htmlFor="name" className="form-label">Full Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  placeholder="e.g. John Doe"
-                  className="form-input"
-                />
-              </div>
+          {/* Right Column: Interactive Form */}
+          <div className="contact-form-col rv rd2">
+            <div className="form-card">
+              <form onSubmit={handleSubmit} className="contact-form">
+                <div className="form-row">
+                  <div className="form-field">
+                    <label htmlFor="name" className="field-label">YOUR NAME</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      placeholder="e.g. Maya Silva"
+                      className="field-input"
+                    />
+                  </div>
 
-              <div className="form-group">
-                <label htmlFor="email" className="form-label">Email Address</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="e.g. john@example.com"
-                  className="form-input"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="subject" className="form-label">Subject</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  placeholder="e.g. Internship Inquiry"
-                  className="form-input"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="message" className="form-label">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows="5"
-                  placeholder="Type your message here..."
-                  className="form-input textarea"
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                disabled={status.loading}
-                className="btn btn-primary submit-btn"
-              >
-                {status.loading ? "Sending Message..." : "Send Message"}
-                {!status.loading && (
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                )}
-              </button>
-
-              {status.message && (
-                <div className={`form-feedback ${status.success ? "success" : "error"}`}>
-                  {status.message}
+                  <div className="form-field">
+                    <label htmlFor="email" className="field-label">EMAIL ADDRESS</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      placeholder="e.g. maya@example.com"
+                      className="field-input"
+                    />
+                  </div>
                 </div>
-              )}
-            </form>
+
+                <div className="form-field">
+                  <label htmlFor="subject" className="field-label">SUBJECT</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    placeholder="e.g. Software Internship Opportunity"
+                    className="field-input"
+                  />
+                </div>
+
+                <div className="form-field">
+                  <label htmlFor="message" className="field-label">MESSAGE</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows="5"
+                    placeholder="Share the details of your project or inquiry..."
+                    className="field-input textarea"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={status.loading}
+                  className="btn btn-primary submit-btn"
+                >
+                  {status.loading ? "Transmitting..." : "Send Message"}
+                  {!status.loading && (
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                  )}
+                </button>
+
+                {status.message && (
+                  <div className={`form-feedback ${status.success ? "success" : "error"}`}>
+                    {status.message}
+                  </div>
+                )}
+              </form>
+            </div>
           </div>
         </div>
       </div>
 
       <style jsx>{`
-        .contact-section {
-          background-color: var(--bg-primary);
+        .contact-head {
+          margin-bottom: 3.5rem;
         }
 
         .contact-grid {
           display: grid;
-          grid-template-columns: 0.8fr 1.2fr;
-          gap: 30px;
+          grid-template-columns: minmax(300px, 0.85fr) minmax(0, 1.15fr);
+          gap: 2.5rem;
           align-items: start;
         }
 
-        @media (max-width: 992px) {
-          .contact-grid {
-            grid-template-columns: 1fr;
-          }
+        .info-card,
+        .form-card {
+          background: var(--surf);
+          border: 1px solid var(--bdr);
+          border-radius: 20px;
+          padding: clamp(1.6rem, 3vw, 2.5rem);
+          box-shadow: var(--shadow);
         }
 
-        .panel-title {
-          font-size: 1.5rem;
-          color: var(--color-primary);
-          margin-bottom: 16px;
-          border-left: 3px solid var(--color-primary);
-          padding-left: 12px;
+        .info-title {
+          font-family: var(--font-heading);
+          font-size: 1.4rem;
+          font-weight: 700;
+          color: var(--tx);
+          margin-bottom: 0.75rem;
         }
 
-        .panel-text {
-          font-size: 1.05rem;
-          line-height: 1.6;
-          color: var(--text-body);
-          margin-bottom: 30px;
+        .info-desc {
+          font-size: 0.92rem;
+          color: var(--tx2);
+          line-height: 1.65;
+          margin-bottom: 2rem;
         }
 
-        /* Contact Details Lists */
-        .contact-methods {
+        .channels-list {
           display: flex;
           flex-direction: column;
-          gap: 20px;
+          gap: 1.2rem;
         }
 
-        .method-item {
+        .channel-item {
           display: flex;
           align-items: center;
-          gap: 16px;
-          padding: 16px;
-          border-radius: 12px;
-          background: rgba(255, 255, 255, 0.02);
-          border: 1px solid rgba(255, 255, 255, 0.05);
-          transition: all 0.3s ease;
+          gap: 1.1rem;
+          padding: 1rem 1.2rem;
+          border-radius: 14px;
+          background: var(--surf2);
+          border: 1px solid var(--bdr);
+          transition: all 0.3s var(--ease);
         }
 
-        .method-item:hover {
-          background: rgba(124, 58, 237, 0.05);
-          border-color: rgba(124, 58, 237, 0.25);
-          transform: translateX(5px);
+        .channel-item:hover {
+          border-color: var(--secondary-light);
+          transform: translateX(6px);
+          background: var(--secondaryB);
+          box-shadow: 0 4px 20px var(--secondaryA);
         }
 
-        .method-icon {
+        .channel-icon {
           width: 44px;
           height: 44px;
-          border-radius: 10px;
-          background: rgba(124, 58, 237, 0.1);
-          color: var(--color-primary);
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          border-radius: 12px;
+          display: grid;
+          place-items: center;
+          flex-shrink: 0;
         }
 
-        .method-item:nth-child(2) .method-icon {
-          background: rgba(34, 211, 238, 0.1);
-          color: var(--color-secondary);
+        .icon-email {
+          background: var(--primaryA);
+          color: var(--primary-light);
+          border: 1px solid rgba(var(--violet-rgb), 0.35);
         }
 
-        .method-item:nth-child(3) .method-icon {
-          background: rgba(236, 72, 153, 0.1);
-          color: var(--color-accent);
+        .icon-linkedin {
+          background: var(--secondaryA);
+          color: var(--secondary-light);
+          border: 1px solid rgba(var(--cyan-rgb), 0.35);
         }
 
-        .method-details {
+        .icon-github {
+          background: var(--accentA);
+          color: var(--accent-light);
+          border: 1px solid rgba(var(--rose-rgb), 0.35);
+        }
+
+        .channel-details {
           display: flex;
           flex-direction: column;
           gap: 2px;
+          min-width: 0;
         }
 
-        .method-label {
-          font-size: 0.8rem;
-          color: var(--text-muted);
+        .channel-label {
+          font-family: var(--font-mono);
+          font-size: 0.68rem;
           text-transform: uppercase;
-          letter-spacing: 0.05em;
+          letter-spacing: 0.08em;
+          color: var(--tx3);
         }
 
-        .method-value {
-          font-size: 0.95rem;
+        .channel-val {
+          font-size: 0.9rem;
           font-weight: 600;
-          color: var(--text-title);
+          color: var(--tx);
           word-break: break-all;
         }
 
-        /* Contact Form */
+        /* Form styling */
         .contact-form {
           display: flex;
           flex-direction: column;
-          gap: 20px;
+          gap: 1.4rem;
         }
 
-        .form-group {
+        .form-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1.2rem;
+        }
+
+        .form-field {
           display: flex;
           flex-direction: column;
-          gap: 8px;
+          gap: 0.5rem;
         }
 
-        .form-label {
-          font-size: 0.85rem;
+        .field-label {
+          font-family: var(--font-mono);
+          font-size: 0.7rem;
           font-weight: 600;
-          color: var(--text-title);
-          text-transform: uppercase;
-          letter-spacing: 0.03em;
+          letter-spacing: 0.12em;
+          color: var(--tx2);
         }
 
-        .form-input {
-          background: rgba(255, 255, 255, 0.02);
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          border-radius: 8px;
-          padding: 14px;
+        .field-input {
+          background: var(--surf2);
+          border: 1px solid var(--bdr2);
+          border-radius: 10px;
+          padding: 0.85rem 1.1rem;
           font-size: 0.95rem;
-          color: var(--text-title);
-          transition: all 0.3s ease;
+          color: var(--tx);
+          transition: all 0.25s var(--ease);
         }
 
-        .form-input::placeholder {
-          color: #475569;
-        }
-
-        .form-input:focus {
+        .field-input:focus {
           outline: none;
-          background: rgba(255, 255, 255, 0.04);
-          border-color: var(--color-secondary);
-          box-shadow: 0 0 10px rgba(34, 211, 238, 0.15);
+          border-color: var(--secondary-light);
+          box-shadow: 0 0 0 3px var(--secondaryA);
+          background: var(--bg);
         }
 
-        .form-input.textarea {
+        .field-input.textarea {
           resize: vertical;
+          min-height: 120px;
         }
 
         .submit-btn {
           width: 100%;
-          justify-content: center;
-          padding: 14px 28px;
+          margin-top: 0.5rem;
         }
 
         .form-feedback {
-          padding: 12px;
-          border-radius: 8px;
-          font-size: 0.9rem;
-          font-weight: 500;
+          padding: 0.85rem 1rem;
+          border-radius: 10px;
+          font-family: var(--font-mono);
+          font-size: 0.78rem;
           text-align: center;
-          margin-top: 10px;
         }
 
         .form-feedback.success {
-          background: rgba(16, 185, 129, 0.1);
-          color: #10b981;
-          border: 1px solid rgba(16, 185, 129, 0.2);
+          background: var(--emeraldA);
+          border: 1px solid var(--emerald);
+          color: var(--emerald);
         }
 
         .form-feedback.error {
-          background: rgba(239, 68, 68, 0.1);
-          color: #ef4444;
-          border: 1px solid rgba(239, 68, 68, 0.2);
+          background: var(--accentA);
+          border: 1px solid var(--accent);
+          color: var(--accent);
+        }
+
+        @media (max-width: 850px) {
+          .contact-grid {
+            grid-template-columns: 1fr;
+          }
+          .form-row {
+            grid-template-columns: 1fr;
+          }
         }
       `}</style>
     </section>
