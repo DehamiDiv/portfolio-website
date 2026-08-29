@@ -66,7 +66,7 @@ export default function Projects() {
       description: "A touchless 4-channel real-time audio loop station and synthesizer utilizing procedural sound generation via the Web Audio API. Features MediaPipe computer vision for gesture-controlled DSP parameter modulation and high-framerate HTML5 Canvas visualizations including real-time frequency spectrograms and audio VU meters.",
       tags: ["JavaScript", "Web Audio API", "MediaPipe", "HTML5 Canvas", "WebGL/CSS3"],
       github: "https://github.com/DehamiDiv/Dj-Mixer",
-      live: null,
+      live: "https://dj-mixer-orcin.vercel.app/",
       gradient: "linear-gradient(135deg, #a855f7 0%, #06b6d4 100%)",
       glyph: "🎧",
       image: "/neondj-mixer.jpg",
