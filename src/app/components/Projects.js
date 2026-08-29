@@ -7,17 +7,18 @@ export default function Projects() {
 
   const projectsData = [
     {
-      title: "Multi-Tenant Headless CMS Platform",
+      title: "CoreHead – Intelligent Blog Builder",
       category: "Web",
       categoryLabel: "FULL-STACK SAAS PRODUCT",
       description: "Architected a multi-tenant headless CMS platform featuring an intuitive visual builder, multi-site context switching, and custom domain routing. Engineered the AI layout generator (prompt-to-layout), dynamic CMS binding panel, and high-performance public page rendering engine with end-to-end authentication (JWT & Google OAuth) and RBAC.",
       tags: ["Next.js", "React", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "Prisma ORM", "OpenAI API", "Tailwind CSS"],
-      github: "https://github.com/DehamiDiv",
-      live: null,
-      gradient: "linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)",
+      github: "https://github.com/DehamiDiv/corehead-frontend",
+      github2: "https://github.com/DehamiDiv/CoreHead-Backend",
+      live: "https://corehead-frontend-production.up.railway.app/",
+      gradient: "linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%)",
       glyph: "🏗️",
-      image: null,
-      accent: "var(--accent-light)"
+      image: "/corehead-cms.jpg",
+      accent: "var(--secondary-light)"
     },
     {
       title: "AI-Powered Website Builder",
@@ -180,7 +181,19 @@ export default function Projects() {
                       className="p-btn p-btn-gh"
                     >
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                      Source Code
+                      {project.github2 ? "Frontend" : "Source Code"}
+                    </a>
+                  )}
+
+                  {project.github2 && (
+                    <a
+                      href={project.github2}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-btn p-btn-gh"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                      Backend
                     </a>
                   )}
 
