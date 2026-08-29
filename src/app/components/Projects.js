@@ -60,40 +60,17 @@ export default function Projects() {
       accent: "var(--emerald)"
     },
     {
-      title: "EduQuery - Academic Discussion Forum",
-      category: "Web",
-      categoryLabel: "STUDENT COLLABORATION",
-      description: "A real-time academic discussion platform designed for university students to exchange course materials, discuss algorithm solutions, share resources, and upvote peer contributions.",
-      tags: ["Next.js", "Supabase DB", "PostgreSQL", "Vanilla CSS", "Edge Functions"],
-      github: "https://github.com/DehamiDiv",
-      live: null,
-      gradient: "linear-gradient(135deg, #6366f1 0%, #a855f7 100%)",
-      glyph: "💬",
-      accent: "var(--primary-light)"
-    },
-    {
-      title: "FitSync - Workout & Milestone Analytics",
-      category: "Web",
-      categoryLabel: "MERN ANALYTICS DASHBOARD",
-      description: "A MERN stack workout logger and body analytics portal. Features interactive chart visualizations, milestone progression tracking, and session goal planning.",
-      tags: ["React.js", "Node.js", "Express", "MongoDB", "Chart.js"],
-      github: "https://github.com/DehamiDiv",
-      live: null,
-      gradient: "linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)",
-      glyph: "📊",
-      accent: "var(--secondary-light)"
-    },
-    {
-      title: "API-Gate - Serverless Auth & Access Manager",
+      title: "NEON//DJ – Gesture-Controlled Audio Mixer",
       category: "System",
-      categoryLabel: "CLOUD SECURITY LAYER",
-      description: "A lightweight API proxy layer with rate-limiting middleware, token verification, route logging, and security role validation running on serverless edge functions.",
-      tags: ["Next.js Edge", "Supabase Auth", "Node.js", "Edge Caching"],
-      github: "https://github.com/DehamiDiv",
+      categoryLabel: "INTERACTIVE AUDIO ENGINEERING",
+      description: "A touchless 4-channel real-time audio loop station and synthesizer utilizing procedural sound generation via the Web Audio API. Features MediaPipe computer vision for gesture-controlled DSP parameter modulation and high-framerate HTML5 Canvas visualizations including real-time frequency spectrograms and audio VU meters.",
+      tags: ["JavaScript", "Web Audio API", "MediaPipe", "HTML5 Canvas", "WebGL/CSS3"],
+      github: "https://github.com/DehamiDiv/Dj-Mixer",
       live: null,
-      gradient: "linear-gradient(135deg, #ec4899 0%, #f43f5e 100%)",
-      glyph: "🔒",
-      accent: "var(--accent-light)"
+      gradient: "linear-gradient(135deg, #a855f7 0%, #06b6d4 100%)",
+      glyph: "🎧",
+      image: "/neondj-mixer.jpg",
+      accent: "var(--primary-light)"
     }
   ];
 
