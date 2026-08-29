@@ -7,6 +7,19 @@ export default function Projects() {
 
   const projectsData = [
     {
+      title: "Multi-Tenant Headless CMS Platform",
+      category: "Web",
+      categoryLabel: "FULL-STACK SAAS PRODUCT",
+      description: "Architected a multi-tenant headless CMS platform featuring an intuitive visual builder, multi-site context switching, and custom domain routing. Engineered the AI layout generator (prompt-to-layout), dynamic CMS binding panel, and high-performance public page rendering engine with end-to-end authentication (JWT & Google OAuth) and RBAC.",
+      tags: ["Next.js", "React", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "Prisma ORM", "OpenAI API", "Tailwind CSS"],
+      github: "https://github.com/DehamiDiv",
+      live: null,
+      gradient: "linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)",
+      glyph: "🏗️",
+      image: null,
+      accent: "var(--accent-light)"
+    },
+    {
       title: "AI-Powered Website Builder",
       category: "Web",
       categoryLabel: "FULL-STACK AI PRODUCT",
