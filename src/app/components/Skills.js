@@ -5,6 +5,9 @@ export default function Skills() {
     { name: "React.js", icon: "⚛️" },
     { name: "Next.js", icon: "▲" },
     { name: "TypeScript", icon: "📘" },
+    { name: "Java", icon: "☕" },
+    { name: "Spring Boot", icon: "🍃" },
+    { name: "MySQL", icon: "🐬" },
     { name: "JavaScript (ES6+)", icon: "💛" },
     { name: "Node.js", icon: "🟢" },
     { name: "Express.js", icon: "⚡" },
@@ -38,8 +41,8 @@ export default function Skills() {
       index: "02",
       accent: "violet",
       title: "Backend & Cloud APIs",
-      desc: "Developing secure RESTful endpoints, edge runtime route handlers, JWT authentication, and integrating cloud services with high throughput.",
-      tools: ["Node.js", "Express.js", "Serverless Routes", "RESTful Architecture", "Supabase Auth", "Stripe Checkout", "Axios"],
+      desc: "Developing secure RESTful endpoints, Spring Boot services, edge route handlers, JWT authentication, and integrating cloud services with high throughput.",
+      tools: ["Spring Boot 3", "Java", "Node.js", "Express.js", "Spring Security", "JWT Auth", "Swagger / OpenAPI", "RESTful Architecture"],
       glyph: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
           <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
@@ -53,8 +56,8 @@ export default function Skills() {
       index: "03",
       accent: "rose",
       title: "Databases & ORM",
-      desc: "Designing normalized relational schemas, NoSQL document collections, transactional integrity, and querying via Prisma and native SQL.",
-      tools: ["PostgreSQL", "Supabase DB", "MongoDB", "Prisma ORM", "SQL Optimization", "Relational Modeling", "NoSQL Aggregations"],
+      desc: "Designing normalized relational schemas, NoSQL document collections, transactional integrity, and querying via Spring Data JPA, Prisma, and native SQL.",
+      tools: ["MySQL 8.0", "PostgreSQL", "Supabase DB", "MongoDB", "Spring Data JPA", "Prisma ORM", "SQL Optimization", "Relational Modeling"],
       glyph: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
           <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
