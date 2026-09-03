@@ -184,7 +184,7 @@ export default function Projects() {
       description: "A production full-stack platform that transforms conversational prompts into responsive, live-previewed websites in real time. Built with sandboxed iframe previews, real-time code revisions, credit balance management, and a Stripe payment integration.",
       tags: ["React.js", "Node.js", "PostgreSQL", "Prisma ORM", "OpenRouter API", "Stripe Checkout"],
       github: "https://github.com/DehamiDiv/Web-site-builder",
-      live: null,
+      live: "https://ai-website-builder-zeta-nine.vercel.app/",
       gradient: "linear-gradient(135deg, #6366f1 0%, #06b6d4 100%)",
       glyph: "🤖",
       image: "/website-builder.jpg",
