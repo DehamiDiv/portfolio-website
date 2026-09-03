@@ -45,7 +45,7 @@ export default function Projects() {
       description: "A robust, full-stack POS and inventory management web application built with React (Vite), Spring Boot 3, and MySQL. It features real-time billing, automated inventory tracking, low-stock alerts, role-based access control (Admin & Cashier), and comprehensive sales analytics dashboards with secure JWT authentication.",
       tags: ["React 19", "Vite", "Spring Boot 3", "Java 23", "MySQL 8.0", "Spring Security", "JWT", "Swagger UI", "RESTful API"],
       github: "https://github.com/DehamiDiv/lakeesha-pos-system-",
-      live: null,
+      live: "https://lakeesha-pos-system.vercel.app/",
       gradient: "linear-gradient(135deg, #059669 0%, #0284c7 100%)",
       glyph: "🛒",
       image: "/lakeesha-pos.jpg",
