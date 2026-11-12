@@ -121,6 +121,19 @@ export default function Contact() {
                   </div>
                 </a>
               </div>
+
+              {/* CV Download */}
+              <div className="cv-download-wrap">
+                <a
+                  href="/Dehami_Divyanjalee_CV.pdf"
+                  download="Dehami_Divyanjalee_CV.pdf"
+                  className="cv-dl-btn"
+                >
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  Download My CV / Resume
+                </a>
+                <p className="cv-dl-hint">PDF · SE Intern · Updated Nov 2026</p>
+              </div>
             </div>
           </div>
 
@@ -398,6 +411,47 @@ export default function Contact() {
           .form-row {
             grid-template-columns: 1fr;
           }
+        }
+
+        /* CV Download */
+        .cv-download-wrap {
+          margin-top: 1.8rem;
+          padding-top: 1.5rem;
+          border-top: 1px solid var(--bdr);
+        }
+
+        .cv-dl-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.65rem;
+          width: 100%;
+          padding: 0.9rem 1.2rem;
+          border-radius: 14px;
+          background: linear-gradient(135deg, var(--primaryA), var(--secondaryA));
+          border: 1px solid var(--bdr2);
+          color: var(--tx);
+          font-family: var(--font-heading);
+          font-size: 0.95rem;
+          font-weight: 600;
+          transition: all 0.3s var(--ease);
+          text-decoration: none;
+          justify-content: center;
+        }
+
+        .cv-dl-btn:hover {
+          border-color: var(--primary-light);
+          background: linear-gradient(135deg, var(--primaryA), var(--secondaryA));
+          box-shadow: 0 8px 25px rgba(var(--violet-rgb), 0.25);
+          transform: translateY(-3px);
+          color: var(--primary-light);
+        }
+
+        .cv-dl-hint {
+          font-family: var(--font-mono);
+          font-size: 0.68rem;
+          color: var(--tx3);
+          text-align: center;
+          margin-top: 0.6rem;
         }
       `}</style>
     </section>

@@ -27,7 +27,7 @@ export default function Navbar() {
         progEl.style.width = `${scrolledPercent}%`;
       }
 
-      const sections = ["home", "pipeline", "about", "skills", "projects", "journey", "contact"];
+      const sections = ["home", "pipeline", "about", "skills", "projects", "journey", "achievements", "contact"];
       const scrollPos = window.scrollY + 200;
 
       for (const id of sections) {
@@ -65,6 +65,7 @@ export default function Navbar() {
     { id: "skills", label: "Skills" },
     { id: "projects", label: "Projects" },
     { id: "journey", label: "Journey" },
+    { id: "achievements", label: "Awards" },
     { id: "contact", label: "Contact" },
   ];
 

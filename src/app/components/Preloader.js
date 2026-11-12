@@ -3,20 +3,23 @@
 import { useEffect, useState } from "react";
 
 export default function Preloader() {
-  const [loaded, setLoaded] = useState(false);
+  const [phase, setPhase] = useState("loading"); // "loading" | "fading" | "done"
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoaded(true);
-    }, 1100);
-
-    return () => clearTimeout(timer);
+    // Start fade-out at 1100ms
+    const fadeTimer = setTimeout(() => setPhase("fading"), 1100);
+    // Remove from DOM after fade completes (600ms transition)
+    const doneTimer = setTimeout(() => setPhase("done"), 1700);
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(doneTimer);
+    };
   }, []);
 
-  if (loaded) return null;
+  if (phase === "done") return null;
 
   return (
-    <div className={`preloader-overlay ${loaded ? "done" : ""}`}>
+    <div className={`preloader-overlay${phase === "fading" ? " fading" : ""}`}>
       <div className="preloader-content">
         <div className="preloader-logo">
           <span>DD</span>
@@ -38,8 +41,14 @@ export default function Preloader() {
           justify-content: center;
           flex-direction: column;
           gap: 1.5rem;
-          transition: opacity 0.6s var(--ease), visibility 0.6s;
+          opacity: 1;
           pointer-events: all;
+          transition: opacity 0.6s var(--ease);
+        }
+
+        .preloader-overlay.fading {
+          opacity: 0;
+          pointer-events: none;
         }
 
         .preloader-content {

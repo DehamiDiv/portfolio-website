@@ -29,6 +29,7 @@ export default function Footer() {
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
           <a href="#journey">Journey</a>
+          <a href="#achievements">Awards</a>
           <a href="#contact">Contact</a>
         </div>
 

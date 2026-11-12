@@ -10,6 +10,7 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Timeline from "./components/Timeline";
+import Achievements from "./components/Achievements";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -24,15 +25,30 @@ export default function Home() {
       });
     };
 
-    const observer = new IntersectionObserver(observerCallback, {
-      threshold: 0.08,
-      rootMargin: "0px 0px -40px 0px",
-    });
+    const setupObserver = () => {
+      const observer = new IntersectionObserver(observerCallback, {
+        threshold: 0.08,
+        rootMargin: "0px 0px -40px 0px",
+      });
 
-    const revealElements = document.querySelectorAll(".rv");
-    revealElements.forEach((el) => observer.observe(el));
+      const revealElements = document.querySelectorAll(".rv");
+      revealElements.forEach((el) => observer.observe(el));
+      return observer;
+    };
 
-    return () => observer.disconnect();
+    // Run immediately for elements already in view
+    let observer = setupObserver();
+
+    // Re-run after preloader finishes fading (1700ms) to catch viewport elements
+    const retryTimer = setTimeout(() => {
+      observer.disconnect();
+      observer = setupObserver();
+    }, 1800);
+
+    return () => {
+      clearTimeout(retryTimer);
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -47,6 +63,7 @@ export default function Home() {
         <Skills />
         <Projects />
         <Timeline />
+        <Achievements />
         <Contact />
       </main>
       <Footer />
